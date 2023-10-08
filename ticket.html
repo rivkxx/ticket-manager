@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Charity Event Ticket Manager</title>
+</head>
+<body>
+    <h1>Virtual Charity Event Ticket Manager</h1>
+    <h2>Available Tickets</h2>
+    <ul>
+        {% for ticket in tickets %}
+            <li>{{ ticket[1] }} - {{ ticket[2] }} <a href="/use_ticket/{{ ticket[0] }}">Use Ticket</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Sell a New Ticket</h2>
+    <form method="POST" action="/">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <button type="submit">Sell Ticket</button>
+    </form>
+</body>
+</html>
